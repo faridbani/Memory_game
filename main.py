@@ -5,18 +5,21 @@ from constats import *
 import random
 import string
 
+# init pygame and set a screen with background color
 pygame.init()
 screen = pygame.display.set_mode(w_size)
 pygame.display.set_caption('Memory Game')
 screen.fill(BG_COLOR)
 
+# The main Game class
 class Game:
     def __init__(self) -> None:
         self.player = 1
         self.grid = []
-        
+        # initial the grid
         self.set_grid()        
     
+    # A randome choice function, return a posible squre to choose
     def rand_choice(self):
         choiced = []
         i = 0
@@ -28,11 +31,13 @@ class Game:
                 i += 1
         return choiced
 
+    # Uses Numpy to set the grid with given width and hiegt
     def set_grid(self):
         l = self.rand_choice()
         random.shuffle(l)
         self.grid = np.array(l).reshape((G_HEIGHT,G_WIDTH))
 
+    # draws the grid on the screen
     def draw_grid(self):
         size = SQR_SIZE
         # Horizontal lines
@@ -42,16 +47,15 @@ class Game:
         for y in range(G_WIDTH+1):
             pygame.draw.line(screen, LINE_COLOR, (y*size[0], 0), (y*size[0], HEIGHT), LINE_DICK)
     
-    def find_item(self, item):
-        items = np.where(self.grid == item)
-        return tuple(items[0]), tuple(items[1])
+    # def find_item(self, item):
+    #     items = np.where(self.grid == item)
+    #     return tuple(items[0]), tuple(items[1])
     
-    def heid_items(self, old, new):
-        self.heid_item(old[0], old[1])
-        self.heid_item(new[0], new[1])
+    # def heid_items(self, old, new):
+    #     self.heid_item(old[0], old[1])
+    #     self.heid_item(new[0], new[1])
 
     def heid_item(self, col, raw):
-        print('Försköker')
         pygame.draw.rect(screen, BG_COLOR, pygame.Rect(SQR_SIZE[0]*raw + LINE_DICK//2, SQR_SIZE[1]*col + LINE_DICK//2, SQR_SIZE[0] - LINE_DICK, SQR_SIZE[0] - LINE_DICK))
         
     def show_item(self, raw , col):
