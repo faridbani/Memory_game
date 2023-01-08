@@ -1,7 +1,9 @@
 # All Constats
 WIDTH = 600
 HEIGHT = 400
-w_size = (WIDTH, HEIGHT)
+
+MENU_HITHT = 30
+w_size = (WIDTH, HEIGHT+MENU_HITHT)
 
 BG_COLOR = (130, 100, 155)
 
