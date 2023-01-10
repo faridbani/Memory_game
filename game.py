@@ -43,10 +43,6 @@ class Game:
         for y in range(G_WIDTH+1):
             pygame.draw.line(self.screen, LINE_COLOR, (y*size[0], MENU_HITHT), (y*size[0], HEIGHT+MENU_HITHT), LINE_DICK)
     
-    # def find_item(self, item):
-    #     items = np.where(self.grid == item)
-    #     return tuple(items[0]), tuple(items[1])
-    
     def heid_items(self, old, new):
         self.heid_item(old[0], old[1])
         self.heid_item(new[0], new[1])
@@ -60,6 +56,16 @@ class Game:
         textRect = text.get_rect()
         textRect.center = (SQR_SIZE[0]*col + (SQR_SIZE[0] // 2), (SQR_SIZE[1]*raw + SQR_SIZE[1]//2 +MENU_HITHT))
         self.screen.blit(text, textRect)
+
+    def show_Comp(self, res):
+        m = res.seconds // 60
+        s = res.seconds % 60
+        font = pygame.font.SysFont("Arial", 28)
+        text = font.render(f"Completed in  {m} minutes and {s} second", True, COMP_COLOR, BG_COLOR)
+        t_rect = text.get_rect()
+        t_rect.center = (WIDTH // 2, (HEIGHT+MENU_HITHT) // 2)
+        self.screen.blit(text, t_rect)
+
 
     def reset(self):
         self.set_grid()

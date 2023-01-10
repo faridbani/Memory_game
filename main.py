@@ -5,6 +5,7 @@ from constats import *
 import random
 import string
 from game import Game
+from datetime import datetime
 
 # init pygame and set a screen with background color
 pygame.init()
@@ -32,8 +33,9 @@ def main():
     game = Game(screen)
     game.draw_grid()
     reset_button = Button("Reset")
-
+    
     old_item = None
+    start = datetime.now()
     while True:
         screen.blit(m_screen, (0, 0))
         reset_button.show()
@@ -53,7 +55,14 @@ def main():
                         old_item = choosed_item
                         old_value = choosen_value
                     else:
-                        if not (old_value == choosen_value):
+                        if old_value == choosen_value:
+                            game.ocopate_grid[choosed_item] = 1
+                            game.ocopate_grid[old_item] = 1
+                            if game.completed():
+                                end = datetime.now()
+                                res = end - start
+                                game.show_Comp(res)
+                        else:
                             pygame.time.wait(1000)
                             game.heid_items(old_item, choosed_item)
                         old_item = None

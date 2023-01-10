@@ -1,22 +1,20 @@
 # All Constats
+
+# Measures
 WIDTH = 600
 HEIGHT = 400
-
 MENU_HITHT = 30
 w_size = (WIDTH, HEIGHT+MENU_HITHT)
-
-BG_COLOR = (130, 100, 155)
-
 G_WIDTH = 6
 G_HEIGHT = 4
-
 SQR_SIZE = ((WIDTH // G_WIDTH), (HEIGHT // G_HEIGHT))
-
 ITEMS = 12
-
-LINE_COLOR = (10, 10, 70)
 LINE_DICK = 10
 
+#Colors
+BG_COLOR = (130, 100, 155)
+LINE_COLOR = (10, 10, 70)
+COMP_COLOR = (80, 50, 105)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 128)
