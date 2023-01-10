@@ -28,6 +28,7 @@ class Game:
 
     # Uses Numpy to set the grid with given width and hiegt
     def set_grid(self):
+        self.ocopate_grid = np.zeros((G_HEIGHT, G_WIDTH), np.int32)
         l = self.rand_choice()
         random.shuffle(l)
         self.grid = np.array(l).reshape((G_HEIGHT,G_WIDTH))
@@ -65,5 +66,9 @@ class Game:
         self.screen.fill(BG_COLOR)
         self.draw_grid()
 
-# game = Game()
-# print(np.shape(game.grid))
+    def completed(self):
+        for r in self.ocopate_grid:
+            for c in r:
+                if c == 0:
+                    return False
+        return True
