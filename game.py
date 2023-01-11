@@ -2,6 +2,7 @@ import pygame
 import numpy as np
 import string
 import random
+from img import Image
 
 from constats import *
 
@@ -14,7 +15,16 @@ class Game:
         # initial the grid
         self.set_grid()        
     
-    # A randome choice function, return a posible squre to choose
+    def laod_images(self):
+        images = []
+        for i in range(1, ITEMS + 1):
+            m = Image(f'images/{i}.jpeg')
+            images.append(m)
+            images.append(m)
+        random.shuffle(images)
+        return images
+
+    # # A randome choice function, return a posible squre to choose
     def rand_choice(self):
         choiced = []
         i = 0

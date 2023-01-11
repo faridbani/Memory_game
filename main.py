@@ -33,7 +33,7 @@ def main():
     game = Game(screen)
     game.draw_grid()
     reset_button = Button("Reset")
-    
+    game.laod_images()
     old_item = None
     start = datetime.now()
     while True:
