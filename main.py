@@ -48,7 +48,10 @@ def main():
                 if pos[1] > MENU_HITHT:
                     raw, col = (pos[1] - MENU_HITHT) // SQR_SIZE[1], pos[0] // SQR_SIZE[0]
                     choosed_item = (raw, col)
-                    choosen_value = game.grid[raw, col]
+                    if game.mode == 'alf':
+                        choosen_value = (game.grid[raw, col])
+                    elif game.mode == 'img':
+                        choosen_value = (game.grid[raw, col]).id
                     game.show_item(raw, col)
                     pygame.display.update()
                     if old_item == None:
