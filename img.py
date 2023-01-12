@@ -12,16 +12,5 @@ class Image:
         self.id = int(re.search(r'\d+', img)[0])
 
 
-# pg.init()
-# screen = pg.display.set_mode((200, 200))
-# m = Image('images/1.jpeg')
-
-# while True:
-#     screen.blit(m.img, (10,10))
-#     for event in pg.event.get():
-#             if event.type == pg.QUIT:
-#                 pg.quit()
-#                 sys.exit()
-#     pg.display.update()
 
 
