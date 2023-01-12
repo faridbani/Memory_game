@@ -76,7 +76,3 @@ def main():
                 
         pygame.display.update()
 main()
-
-# game = Game()
-# print(len(game.grid))
-
