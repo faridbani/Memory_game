@@ -9,7 +9,7 @@ from constats import *
 # The main Game class
 class Game:
     def __init__(self, screen) -> None:
-        self.mode = "img" # modes are 'alf' upercases or 'img' for images 
+        self.mode = "img" # modes are 'alf' for upercases or 'img' for images 
         self.screen = screen
         self.player = 1
         self.grid = []
