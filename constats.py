@@ -19,3 +19,7 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 128)
 RED = (255, 0, 0)
+
+# Path to images directory with all .jpeg images
+# If you have a different file type, you should chande it to your file type 
+IMG_PATH = 'images/*.jpeg'
