@@ -52,7 +52,7 @@ def main():
                         choosen_value = (game.grid[raw, col])
                     elif game.mode == 'img':
                         choosen_value = (game.grid[raw, col]).id
-                        print('image id: ', (game.grid[raw, col]).id)
+                        #print('image id: ', (game.grid[raw, col]).id)
                     game.show_item(raw, col)
                     pygame.display.update()
                     if old_item == None:

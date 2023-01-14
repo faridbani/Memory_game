@@ -19,7 +19,7 @@ class Game:
     
     def laod_images(self):
         img_files = glob(IMG_PATH)
-        print(img_files)
+        #print(img_files)
         images = []
         for i in range(1, ITEMS + 1):
             m = Image(img_files[i-1], i)
