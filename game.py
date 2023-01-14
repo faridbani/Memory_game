@@ -5,6 +5,7 @@ import random
 from img import Image
 
 from constats import *
+from glob import glob
 
 # The main Game class
 class Game:
@@ -17,9 +18,11 @@ class Game:
         self.set_grid()        
     
     def laod_images(self):
+        img_files = glob(IMG_PATH)
+        print(img_files)
         images = []
         for i in range(1, ITEMS + 1):
-            m = Image(f'images/{i}.jpeg')
+            m = Image(img_files[i-1], i)
             images.append(m)
             images.append(m)
         random.shuffle(images)

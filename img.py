@@ -4,13 +4,8 @@ import sys
 import re
 
 class Image:
-    def __init__(self, img) -> None:
+    def __init__(self, img, id=0) -> None:
         self.img = pg.image.load(img).convert()
         self.img = pg.transform.scale(self.img, (100, 100))
-        #py.Surface.convert(self.img)
-        #self.id = img
-        self.id = int(re.search(r'\d+', img)[0])
-
-
-
-
+        self.rect = self.img.get_rect()
+        self.id = id
