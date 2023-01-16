@@ -13,12 +13,17 @@ LINE_DICK = 5
 
 #Colors
 BG_COLOR = (130, 100, 155)
+MENU_GB = (100, 70, 125)
 LINE_COLOR = (10, 10, 70)
 COMP_COLOR = (80, 50, 105)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 128)
 RED = (255, 0, 0)
+
+# Buttons dest
+B_TOP = 10
+B_LEFT = 10
 
 # Path to images directory with all .jpeg images
 # If you have a different file type, you should chande it to your file type 
