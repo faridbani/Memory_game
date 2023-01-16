@@ -1,6 +1,6 @@
 # A Memory game in Pygame
 
-With tow modes, one with uppercases letters
-and one with dogs images.
-modes is now availble to choose bithween A-Z (Letters) and Dogs (Images)
+### With tow modes, one with letters (uppercase letters) and one with dogs images.
+
+Modes are now availble on the menu to choose bithween A-Z (Letters) and Dogs (Images).
 
