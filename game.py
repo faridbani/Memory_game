@@ -10,9 +10,9 @@ from glob import glob
 # The main Game class
 class Game:
     def __init__(self, screen) -> None:
-        self.mode = "img" # modes are 'alf' for upercases or 'img' for images 
+        self.mode = "img" # modes are 'alfa' for upercases or 'img' for images 
         self.screen = screen
-        self.player = 1
+        
         self.grid = []
         # initial the grid
         self.set_grid()        
@@ -43,7 +43,7 @@ class Game:
     # Uses Numpy to set the grid with given width and hiegt
     def set_grid(self):
         self.ocopate_grid = np.zeros((G_HEIGHT, G_WIDTH), np.int32)
-        if self.mode == 'alf':
+        if self.mode == 'alfa':
             l = self.rand_choice()
         elif self.mode == 'img':
             l = self.laod_images()
@@ -70,7 +70,7 @@ class Game:
         pygame.draw.rect(self.screen, BG_COLOR, pygame.Rect(SQR_SIZE[0]*raw + LINE_DICK//2, SQR_SIZE[1]*col + LINE_DICK//2 + MENU_HITHT, SQR_SIZE[0] - LINE_DICK, SQR_SIZE[1] - LINE_DICK))
         
     def show_item(self, raw , col):
-        if self.mode == 'alf':
+        if self.mode == 'alfa':
             font = pygame.font.Font('freesansbold.ttf', 72)
             text = font.render(self.grid[raw][col], True, RED, BG_COLOR)
             textRect = text.get_rect()
